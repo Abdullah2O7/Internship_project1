@@ -10,7 +10,7 @@ public class PageBase {
     public WebDriver driver;
     public Select select;
 
-    PageBase(WebDriver driver){
+    public PageBase(WebDriver driver){
         this.driver = driver;
     }
     public void waitUntilVisibilityOfElement(By by)
@@ -18,10 +18,9 @@ public class PageBase {
          new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(ExpectedConditions.visibilityOfElementLocated(by));
     }
-    public void clickOnButton(By by)
+    public void clickOn(By by)
     {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(by));
+        waitUntilVisibilityOfElement(by);
         driver.findElement(by).click();
     }
     public void sendText(By by, String text)

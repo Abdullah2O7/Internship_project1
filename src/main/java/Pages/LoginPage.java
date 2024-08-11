@@ -2,8 +2,6 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends PageBase{
     public LoginPage(WebDriver driver) {
@@ -19,7 +17,7 @@ public class LoginPage extends PageBase{
     {
         sendText(usernameField, username);
         sendText(passwordField, password);
-        clickOnButton(loginBtn);
+        clickOn(loginBtn);
     }
     public void navigateToLoginPage()
     {

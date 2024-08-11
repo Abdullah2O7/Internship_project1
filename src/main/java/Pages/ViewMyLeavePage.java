@@ -75,12 +75,12 @@ public class ViewMyLeavePage extends PageBase {
     }
     public void removeTheSelectedStatus()
     {
-        clickOnButton(removeStatusIcon);
+        clickOn(removeStatusIcon);
     }
     public void selectLeaveStatus()
     {
-        clickOnButton(leaveStatusField);
-        clickOnButton(leaveStatus);
+        clickOn(leaveStatusField);
+        clickOn(leaveStatus);
     }
     public void selectLeaveType()
     {
@@ -89,8 +89,8 @@ public class ViewMyLeavePage extends PageBase {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        clickOnButton(leaveTypeField);
-        clickOnButton(leaveTypeOption);
+        clickOn(leaveTypeField);
+        clickOn(leaveTypeOption);
     }
     public void clickOnSubmitBtn()
     {
@@ -101,23 +101,23 @@ public class ViewMyLeavePage extends PageBase {
         }
 //        new WebDriverWait(driver, Duration.ofSeconds(10))
 //                .until(ExpectedConditions.visibilityOfElementLocated(submitBtn));
-        clickOnButton(submitBtn);
+        clickOn(submitBtn);
     }
     public void selectInvalidFromDate()
     {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(fromDateField));
-        clickOnButton(calendar1);
-        clickOnButton(months);
+        clickOn(calendar1);
+        clickOn(months);
         selectMonth().click();
-        clickOnButton(FromDateDay);
+        clickOn(FromDateDay);
     }
     public void selectFromDate()
     {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(fromDateField));
-        clickOnButton(calendar1);
-        clickOnButton(months);
+        clickOn(calendar1);
+        clickOn(months);
         selectMonth().click();
         driver.findElement(By.xpath(getDay(2))).click();
     }
@@ -125,8 +125,8 @@ public class ViewMyLeavePage extends PageBase {
     {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(toDateField));
-        clickOnButton(calendar2);
-       clickOnButton(months);
+        clickOn(calendar2);
+       clickOn(months);
        selectMonth().click();
        driver.findElement(By.xpath(getDay(31))).click();
     }
@@ -134,8 +134,8 @@ public class ViewMyLeavePage extends PageBase {
     {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(toDateField));
-        clickOnButton(calendar2);
-        clickOnButton(months);
+        clickOn(calendar2);
+        clickOn(months);
         selectMonth().click();
         driver.findElement(By.xpath(getDay(7))).click();
     }
@@ -156,11 +156,11 @@ public class ViewMyLeavePage extends PageBase {
     public void removeAllSelectedStatus()
     {
 
-        clickOnButton(removeStatusIcon);
-        clickOnButton(removeStatusIcon);
-        clickOnButton(removeStatusIcon);
-        clickOnButton(removeStatusIcon);
-        clickOnButton(removeStatusIcon);
+        clickOn(removeStatusIcon);
+        clickOn(removeStatusIcon);
+        clickOn(removeStatusIcon);
+        clickOn(removeStatusIcon);
+        clickOn(removeStatusIcon);
 
     }
     public String getTheSelectedFromDate(){
@@ -170,13 +170,13 @@ public class ViewMyLeavePage extends PageBase {
     }
     public void clickOnResetBtn()
     {
-        clickOnButton(resetBtn);
+        clickOn(resetBtn);
     }
     public void clickOnUpDownToggle()
     {
          new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(displayAndHideToggle));
-        clickOnButton(displayAndHideToggle);
+        clickOn(displayAndHideToggle);
     }
     public void printDates()
     {
@@ -185,9 +185,9 @@ public class ViewMyLeavePage extends PageBase {
     }
     public void elementIsNotClickable()
     {
-        clickOnButton(leaveStatusList);
+        clickOn(leaveStatusList);
         try {
-            clickOnButton(leaveStatus);
+            clickOn(leaveStatus);
             System.out.println("Selected option is still clickable in the list.");
         } catch (Exception e) {
             System.out.println("Selected option is not clickable in the list as expected.");

@@ -77,12 +77,12 @@ public class AssignLeavePage extends PageBase{
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        clickOnButton(nameOption);
+        clickOn(nameOption);
     }
     public void selectLeaveType(String type)
     {
-        clickOnButton(leaveTypeField);
-        clickOnButton(leaveTypeList);
+        clickOn(leaveTypeField);
+        clickOn(leaveTypeList);
     }
     public void enterFromDate(String date)
     {
@@ -99,15 +99,15 @@ public class AssignLeavePage extends PageBase{
     public void clickOnSubmitBtn()
     {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(submitBtn));
-        clickOnButton(submitBtn);
+        clickOn(submitBtn);
     }
    public void selectFromDate() {
-        clickOnButton(calender1);
-        clickOnButton(FromDateDay);
+        clickOn(calender1);
+        clickOn(FromDateDay);
    }
    public void selectToDate(){
-        clickOnButton(calendar2);
-        clickOnButton(ToDateDay);
+        clickOn(calendar2);
+        clickOn(ToDateDay);
    }
 
 }
